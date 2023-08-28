@@ -9,7 +9,7 @@ public class EventManager : MonoBehaviour
 {
     public static EventManager Instance;
     
-    private List<EventObject> _eventList = new();
+    public List<EventObject> eventList = new();
 
     private void Awake()
     {
@@ -20,13 +20,13 @@ public class EventManager : MonoBehaviour
         foreach (var eventData in eventDataList)
         {
             var eventObj = new EventObject(eventData);
-            _eventList.Add(eventObj);
+            eventList.Add(eventObj);
         }
     }
 
     public EventObject GetEvent()
     {
-        var num = Random.Range(0, _eventList.Count);
-        return _eventList[num];
+        var num = Random.Range(0, eventList.Count);
+        return eventList[num];
     }
 }

@@ -7,6 +7,7 @@ using UnityEngine.UI;
 [System.Serializable]
 public class Card : MonoBehaviour
 {
+    [SerializeField] private string cardId;
     [SerializeField] private Image icon;
     [SerializeField] private TMP_Text characterName;
 

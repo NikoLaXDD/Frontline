@@ -7,7 +7,7 @@ public class CardManager : MonoBehaviour
 {
     public static CardManager Instance;
     
-    private List<CardObject> _cardList = new();
+    public List<CardObject> cardList = new();
 
     //[SerializeField] private CardScriptable endMoneyMinus;
     //[SerializeField] private CardScriptable endMoneyPlus;
@@ -22,13 +22,13 @@ public class CardManager : MonoBehaviour
         foreach (var cardData in cardLoad)
         {
             var card = new CardObject(cardData);
-            _cardList.Add(card);
+            cardList.Add(card);
         }
     }
 
     public CardObject GetCard()
     {
-        var num = Random.Range(0, _cardList.Count);
-        return _cardList[num];
+        var num = Random.Range(0, cardList.Count);
+        return cardList[num];
     }
 }

@@ -20,17 +20,33 @@ public class SaveLoadController : MonoBehaviour
     public void Load()
     {
         saveLoadStruct = JsonUtility.FromJson<SaveLoadStruct>(File.ReadAllText(Application.streamingAssetsPath + "SaveLoadController.json"));
-        GameManager.Instance.Manpower = saveLoadStruct._savedManpower;
-        GameManager.Instance.Money = saveLoadStruct._savedMoney;
-        GameManager.Instance.Sup = saveLoadStruct._savedSup;
-        GameManager.Instance.Ammo = saveLoadStruct._savedAmmo;
+        GameManager.Instance.Manpower = saveLoadStruct.SavedManpower;
+        GameManager.Instance.Money = saveLoadStruct.SavedMoney;
+        GameManager.Instance.Sup = saveLoadStruct.SavedSup;
+        GameManager.Instance.Ammo = saveLoadStruct.SavedAmmo;
         
-        GameManager.Instance.Days = saveLoadStruct._savedDays;
-        GameManager.Instance.Months = saveLoadStruct._savedMonths;
-        GameManager.Instance.Years = saveLoadStruct._savedYears;
+        GameManager.Instance.Days = saveLoadStruct.SavedDays;
+        GameManager.Instance.Months = saveLoadStruct.SavedMonths;
+        GameManager.Instance.Years = saveLoadStruct.SavedYears;
+
+        foreach (var loadEvent in EventManager.Instance.eventList)
+        {
+            if (loadEvent.EventID == saveLoadStruct.IdEvent)
+            {
+                GameManager.Instance.InstantiateEvent(loadEvent);
+            }
+        }
+        
+        foreach (var loadCard in CardManager.Instance.cardList)
+        {
+            if (loadCard.CardId == saveLoadStruct.IdCard)
+            {
+                GameManager.Instance.InstantiateCard(loadCard);
+            }
+        }
         
         GameManager.Instance.UpdateStatusBar();
-        GameManager.Instance.CalendarManager();
+        GameManager.Instance.CalendarController();
     }
 
     [ContextMenu("Save")]
@@ -38,14 +54,16 @@ public class SaveLoadController : MonoBehaviour
     {
         saveLoadStruct = new SaveLoadStruct()
         {
-            _savedManpower = GameManager.Instance.Manpower,
-            _savedMoney = GameManager.Instance.Money,
-            _savedSup = GameManager.Instance.Sup,
-            _savedAmmo = GameManager.Instance.Ammo,
+            SavedManpower = GameManager.Instance.Manpower,
+            SavedMoney = GameManager.Instance.Money,
+            SavedSup = GameManager.Instance.Sup,
+            SavedAmmo = GameManager.Instance.Ammo,
             
-            _savedDays = GameManager.Instance.Days,
-            _savedMonths = GameManager.Instance.Months,
-            _savedYears = GameManager.Instance.Years
+            SavedDays = GameManager.Instance.Days,
+            SavedMonths = GameManager.Instance.Months,
+            SavedYears = GameManager.Instance.Years,
+            IdCard = GameManager.Instance._currentCard.CardId,
+            IdEvent = GameManager.Instance._currentEvent.EventID,
         };
         
         File.WriteAllText(Application.streamingAssetsPath + "SaveLoadController.json", JsonUtility.ToJson(saveLoadStruct));
@@ -53,13 +71,16 @@ public class SaveLoadController : MonoBehaviour
 
     struct SaveLoadStruct
     {
-        public int _savedManpower;
-        public int _savedMoney;
-        public int _savedSup;
-        public int _savedAmmo;
+        public int SavedManpower;
+        public int SavedMoney;
+        public int SavedSup;
+        public int SavedAmmo;
         
-        public int _savedDays;
-        public int _savedMonths;
-        public int _savedYears;
+        public int SavedDays;
+        public int SavedMonths;
+        public int SavedYears;
+
+        public string IdCard;
+        public string IdEvent;
     }
 }

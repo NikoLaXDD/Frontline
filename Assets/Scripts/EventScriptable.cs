@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Event", menuName = "ScriptableObjects/Event", order = 2)]
 public class EventScriptable : ScriptableObject
 {
+    public string eventId;
+    
     public string prefabID;
     
     public int moneyPlus;

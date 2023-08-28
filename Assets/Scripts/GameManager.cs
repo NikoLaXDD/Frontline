@@ -33,11 +33,11 @@ public class GameManager : MonoBehaviour
     
     private bool _isEnded;
 
-    private EventObject _currentEvent;
-    private CardObject _currentCard;
+    public EventObject _currentEvent;
+    public CardObject _currentCard;
 
-    private EventObject _lastEvent;
-    private CardObject _lastCard;
+    public EventObject _lastEvent;
+    public CardObject _lastCard;
 
     public static GameManager Instance;
 
@@ -57,27 +57,18 @@ public class GameManager : MonoBehaviour
     
     private void Start()
     {
-        if (EndGame())
-        {
-            Debug.Log("123");
-        }
-        else
-        {
-            InstantiateCard();
-        }
         
-        UpdateStatusBar();
     }
 
     public void InstantiateCard()
     {
-        CalendarManager();
+        CalendarController();
         
         if (_currentCard != null)
         {
             _lastCard = _currentCard;
         }
-        
+
         _currentCard = CardManager.Instance.GetCard();
 
         if (_currentCard == _lastCard)
@@ -112,6 +103,29 @@ public class GameManager : MonoBehaviour
         {
             Console.WriteLine(e);
         }
+    }
+
+    public void InstantiateCard(CardObject cardSpawned)
+    {
+        CalendarController();
+        
+        var card = Instantiate(cardPrefab, spawnTransformCard);
+        card.SetData(cardSpawned);
+
+        try
+        {
+            SaveLoadController.Instance.Save();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
+    }
+
+    public void InstantiateEvent(EventObject eventSpawned)
+    {
+        _currentEvent = eventSpawned;
+        textMassage.text = _currentEvent.TextEvent;
     }
 
     public void AnswerYes()
@@ -171,7 +185,7 @@ public class GameManager : MonoBehaviour
         Days++;
     }
 
-    public void CalendarManager()
+    public void CalendarController()
     {
         if (Days >= 31)
         {
