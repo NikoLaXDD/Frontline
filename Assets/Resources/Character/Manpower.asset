@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c31ea7df61494dc1baee63a6bca11383, type: 3}
   m_Name: Manpower
   m_EditorClassIdentifier: 
+  cardId: Manpower
   prefabName: Manpower
   sprite: {fileID: 21300000, guid: 80fc1ffd194d4af4c9928b0836a4be92, type: 3}

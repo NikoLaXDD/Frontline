@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c31ea7df61494dc1baee63a6bca11383, type: 3}
   m_Name: Sup
   m_EditorClassIdentifier: 
+  cardId: Sup
   prefabName: Sup
   sprite: {fileID: 21300000, guid: f40bd0c0cc6154f44b7ff74555d8cb83, type: 3}

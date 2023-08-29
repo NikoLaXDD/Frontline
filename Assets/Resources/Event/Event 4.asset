@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a040d69ec15d9d4cabfd072b46dcf59, type: 3}
   m_Name: Event 4
   m_EditorClassIdentifier: 
-  prefabID: 
+  eventId: 4
+  prefabID: 4
   moneyPlus: 0
   ammoPlus: 0
   supPlus: -1

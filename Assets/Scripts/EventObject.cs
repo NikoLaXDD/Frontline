@@ -6,7 +6,7 @@ using UnityEngine;
 [Serializable]
 public class EventObject
 {
-    public string EventID { get; set; }
+    public string EventId { get; set; }
     
     public string PrefabName { get; set; }
 
@@ -24,7 +24,7 @@ public class EventObject
     
     public EventObject(EventScriptable data)
     {
-        EventID = data.eventId;
+        EventId = data.eventId;
         
         PrefabName = data.prefabID;
         AmmoPlus = data.ammoPlus;

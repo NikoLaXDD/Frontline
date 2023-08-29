@@ -10,6 +10,7 @@ public class EventManager : MonoBehaviour
     public static EventManager Instance;
     
     public List<EventObject> eventList = new();
+    public List<EventObject> eventEndList = new();
 
     private void Awake()
     {
@@ -21,6 +22,14 @@ public class EventManager : MonoBehaviour
         {
             var eventObj = new EventObject(eventData);
             eventList.Add(eventObj);
+        }
+
+        var eventEndDataList = Resources.LoadAll<EventScriptable>("EndEvent").ToList();
+        
+        foreach (var eventEnd in eventEndDataList)
+        {
+            var eventObj = new EventObject(eventEnd);
+            eventEndList.Add(eventObj);
         }
     }
 

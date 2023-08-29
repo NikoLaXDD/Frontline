@@ -6,13 +6,23 @@
   <component name="ChangeListManager">
     <list default="true" id="250bc8ec-8060-4ab0-b757-43e728cf1b52" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Frontline/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Frontline/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Card.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Card.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Character/Ammo.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Character/Ammo.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Character/Manpower.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Character/Manpower.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Character/Money.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Character/Money.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Character/Sup.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Character/Sup.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/End.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/End/EndMoneyMinus.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/End/EndMoneyMinus.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/End/EndMoneyPlus.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/End/EndMoneyPlus.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Event/Event 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Event/Event 1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Event/Event 2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Event/Event 2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Event/Event 3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Event/Event 3.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Event/Event 4.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Event/Event 4.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardScriptable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardScriptable.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/EventManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EventManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/EventObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EventObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EventScriptable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EventScriptable.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/SaveLoadController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SaveLoadController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssetsSaveLoadController.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssetsSaveLoadController.json" afterDir="false" />
@@ -127,7 +137,7 @@
       <workItem from="1692796326542" duration="10221000" />
       <workItem from="1692901845829" duration="3163000" />
       <workItem from="1693163596978" duration="348000" />
-      <workItem from="1693163954739" duration="9214000" />
+      <workItem from="1693163954739" duration="15456000" />
     </task>
     <servers />
   </component>

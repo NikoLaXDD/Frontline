@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c31ea7df61494dc1baee63a6bca11383, type: 3}
-  m_Name: Money
+  m_Name: EndSupMinus
   m_EditorClassIdentifier: 
-  cardId: Money
-  prefabName: Money
-  sprite: {fileID: 21300000, guid: b027362837ac40b40b96a2bc0f52af4a, type: 3}
+  cardId: 
+  prefabName: 
+  sprite: {fileID: 0}

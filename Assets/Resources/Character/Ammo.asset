@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c31ea7df61494dc1baee63a6bca11383, type: 3}
   m_Name: Ammo
   m_EditorClassIdentifier: 
+  cardId: Ammo
   prefabName: Ammo
   sprite: {fileID: 21300000, guid: 40d732837b387e84f83fa21052513fe9, type: 3}

@@ -56,4 +56,12 @@ public class GameMenu : MonoBehaviour
     {
         //Exit
     }
+
+    private void Update()
+    {
+        if (GameManager.Instance.GameOver)
+        {
+            panelMenu.SetActive(true);
+        }
+    }
 }

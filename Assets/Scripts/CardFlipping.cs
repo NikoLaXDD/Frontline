@@ -55,10 +55,6 @@ public class CardFlipping : MonoBehaviour
             {
                 GameManager.Instance.InstantiateCard();
             }
-            else
-            {
-                
-            }
         }
         else if(_lastPos.x <= -2)
         {
@@ -67,10 +63,6 @@ public class CardFlipping : MonoBehaviour
             if (!GameManager.Instance.EndGame())
             {
                 GameManager.Instance.InstantiateCard();
-            }
-            else
-            {
-                
             }
         }
     }

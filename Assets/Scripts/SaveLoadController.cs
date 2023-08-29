@@ -31,7 +31,7 @@ public class SaveLoadController : MonoBehaviour
 
         foreach (var loadEvent in EventManager.Instance.eventList)
         {
-            if (loadEvent.EventID == saveLoadStruct.IdEvent)
+            if (loadEvent.EventId == saveLoadStruct.IdEvent)
             {
                 GameManager.Instance.InstantiateEvent(loadEvent);
             }
@@ -63,7 +63,7 @@ public class SaveLoadController : MonoBehaviour
             SavedMonths = GameManager.Instance.Months,
             SavedYears = GameManager.Instance.Years,
             IdCard = GameManager.Instance._currentCard.CardId,
-            IdEvent = GameManager.Instance._currentEvent.EventID,
+            IdEvent = GameManager.Instance._currentEvent.EventId,
         };
         
         File.WriteAllText(Application.streamingAssetsPath + "SaveLoadController.json", JsonUtility.ToJson(saveLoadStruct));

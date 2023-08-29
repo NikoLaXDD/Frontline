@@ -22,22 +22,25 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TMP_Text textMonth;
     [SerializeField] private TMP_Text textYears;
 
-    public int Days;
-    public int Months;
-    public int Years;
+    [HideInInspector] public int Days;
+    [HideInInspector] public int Months;
+    [HideInInspector] public int Years;
     
-    public int Manpower;
-    public int Money;
-    public int Sup;
-    public int Ammo;
+    [HideInInspector] public int Manpower;
+    [HideInInspector] public int Money;
+    [HideInInspector] public int Sup;
+    [HideInInspector] public int Ammo;
     
     private bool _isEnded;
+    public bool GameOver;
 
-    public EventObject _currentEvent;
-    public CardObject _currentCard;
+    [HideInInspector] public EventObject _currentEvent;
+    [HideInInspector] public CardObject _currentCard;
 
-    public EventObject _lastEvent;
-    public CardObject _lastCard;
+    [HideInInspector] public EventObject _lastEvent;
+    [HideInInspector] public CardObject _lastCard;
+
+    [HideInInspector] private string _endingId;
 
     public static GameManager Instance;
 
@@ -53,11 +56,6 @@ public class GameManager : MonoBehaviour
         Days = 1;
         Months = 1;
         Years = 2123;
-    }
-    
-    private void Start()
-    {
-        
     }
 
     public void InstantiateCard()
@@ -111,7 +109,7 @@ public class GameManager : MonoBehaviour
         
         var card = Instantiate(cardPrefab, spawnTransformCard);
         card.SetData(cardSpawned);
-
+        
         try
         {
             SaveLoadController.Instance.Save();
@@ -130,6 +128,13 @@ public class GameManager : MonoBehaviour
 
     public void AnswerYes()
     {
+        if (_isEnded)
+        {
+            textMassage.text = "";
+            GameOver = true;
+            return;
+        }
+        
         Manpower += _currentEvent.ManpowerPlus;
         Money += _currentEvent.MoneyPlus;
         Sup += _currentEvent.SupPlus;
@@ -139,6 +144,13 @@ public class GameManager : MonoBehaviour
 
     public void AnswerNo()
     {
+        if (_isEnded)
+        {
+            textMassage.text = "";
+            GameOver = true;
+            return;
+        }
+        
         Manpower += _currentEvent.ManpowerMinus;
         Money += _currentEvent.MoneyMinus;
         Sup += _currentEvent.SupMinus;
@@ -157,29 +169,61 @@ public class GameManager : MonoBehaviour
 
     private void CheckForNextStep()
     {
-        if (Money <= 0 || Money >= 6)
+        if (Money <= 0)
         {
             _isEnded = true;
-            Debug.Log("Ты проебал");
-            return;
+            _endingId = "EndMoneyMinus";
+            GetEndCard(_endingId);
+            GetEndEvent(_endingId);
         }
-        if (Sup <= 0 || Sup >= 6)
+        if (Money >= 6)
         {
             _isEnded = true;
-            Debug.Log("Ты проебал");
-            return;
+            _endingId = "EndMoneyPlus";
+            GetEndCard(_endingId);
+            GetEndEvent(_endingId);
         }
-        if (Manpower <= 0 || Manpower >= 6)
+        if (Sup <= 0)
         {
             _isEnded = true;
-            Debug.Log("Ты проебал");
-            return;
+            _endingId = "EndSupMinus";
+            GetEndCard(_endingId);
+            GetEndEvent(_endingId);
         }
-        if (Ammo <= 0 || Ammo >= 6)
+        if (Sup >= 6)
         {
             _isEnded = true;
-            Debug.Log("Ты проебал");
-            return;
+            _endingId = "EndSupPlus";
+            GetEndCard(_endingId);
+            GetEndEvent(_endingId);
+        }
+        if (Manpower <= 0)
+        {
+            _isEnded = true;
+            _endingId = "EndManpowerMinus";
+            GetEndCard(_endingId);
+            GetEndEvent(_endingId);
+        }
+        if (Manpower >= 6)
+        {
+            _isEnded = true;
+            _endingId = "EndManpowerPlus";
+            GetEndCard(_endingId);
+            GetEndEvent(_endingId);
+        }
+        if (Ammo <= 0)
+        {
+            _isEnded = true;
+            _endingId = "EndAmmoMinus";
+            GetEndCard(_endingId);
+            GetEndEvent(_endingId);
+        }
+        if (Ammo >= 6)
+        {
+            _isEnded = true;
+            _endingId = "EndAmmoPlus";
+            GetEndCard(_endingId);
+            GetEndEvent(_endingId);
         }
 
         Days++;
@@ -205,5 +249,27 @@ public class GameManager : MonoBehaviour
     public bool EndGame()
     {
         return _isEnded;
+    }
+
+    public void GetEndCard(string endId)
+    {
+        foreach (var cardEnd in CardManager.Instance.cardListEnd)
+        {
+            if (cardEnd.CardId == endId)
+            {
+                InstantiateCard(cardEnd);
+            }
+        }
+    }
+
+    public void GetEndEvent(string endId)
+    {
+        foreach (var eventEnd in EventManager.Instance.eventEndList)
+        {
+            if (eventEnd.EventId == endId)
+            {
+                InstantiateEvent(eventEnd);
+            }
+        }
     }
 }
