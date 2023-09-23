@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c31ea7df61494dc1baee63a6bca11383, type: 3}
   m_Name: EndMoneyMinus
   m_EditorClassIdentifier: 
-  prefabName: 2
+  cardId: EndMoneyMinus
+  prefabName: EndMoneyMinus
   sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}

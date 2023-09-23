@@ -1,9 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class CardFlipping : MonoBehaviour
 {
@@ -49,18 +45,20 @@ public class CardFlipping : MonoBehaviour
     {
         if (_lastPos.x >= 2)
         {
+            GameOver.Instance.CheckForNextStep();
             Destroy(gameObject);
-            GameManager.Instance.AnswerYes();
-            if (!GameManager.Instance.EndGame())
+            GameManager.Instance.AnswerYesAction?.Invoke();
+            if (!GameOver.Instance.IsGameOver)
             {
                 GameManager.Instance.InstantiateCard();
             }
         }
         else if(_lastPos.x <= -2)
         {
+            GameOver.Instance.CheckForNextStep();
             Destroy(gameObject);
-            GameManager.Instance.AnswerNo();
-            if (!GameManager.Instance.EndGame())
+            GameManager.Instance.AnswerNoAction?.Invoke();
+            if (!GameOver.Instance.IsGameOver)
             {
                 GameManager.Instance.InstantiateCard();
             }

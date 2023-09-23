@@ -29,7 +29,7 @@ public class GameMenu : MonoBehaviour
         try
         {
             SaveLoadController.Instance.Load();
-            GameManager.Instance.UpdateStatusBar();
+            StatusBarController.Instance.UpdateStatusBar();
         }
         catch (Exception e)
         {
@@ -42,26 +42,19 @@ public class GameMenu : MonoBehaviour
         var state = panelMenu.activeSelf;
         panelMenu.SetActive(!state);
         GameManager.Instance.InstantiateCard();
-        GameManager.Instance.Ammo = 3;
-        GameManager.Instance.Manpower = 3;
-        GameManager.Instance.Sup = 3;
-        GameManager.Instance.Money = 3;
-        GameManager.Instance.Days = 1;
-        GameManager.Instance.Months = 1;
-        GameManager.Instance.Years = 2123;
-        GameManager.Instance.UpdateStatusBar();
+        StatusController.Instance.statsDictionaty[StatusController.StatusType.Ammo] = 3;
+        StatusController.Instance.statsDictionaty[StatusController.StatusType.Manpower] = 3;
+        StatusController.Instance.statsDictionaty[StatusController.StatusType.Sup] = 3;
+        StatusController.Instance.statsDictionaty[StatusController.StatusType.Money] = 3;
+        CalendarController.Instance.calendar[CalendarController.CalendarType.Days] = 1;
+        CalendarController.Instance.calendar[CalendarController.CalendarType.Months] = 1;
+        CalendarController.Instance.calendar[CalendarController.CalendarType.Years] = 2123;
+        StatusBarController.Instance.UpdateStatusBar();
+        CalendarController.Instance.DaysControl();
     }
 
     private void ClickButtonExit()
     {
         //Exit
-    }
-
-    private void Update()
-    {
-        if (GameManager.Instance.GameOver)
-        {
-            panelMenu.SetActive(true);
-        }
     }
 }

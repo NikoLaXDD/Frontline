@@ -22,4 +22,4 @@ MonoBehaviour:
   ammoMinus: 0
   supMinus: 0
   manpowerMinus: 0
-  massage: 
+  massage: EndAmmoMinus

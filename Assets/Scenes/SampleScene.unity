@@ -1908,6 +1908,10 @@ GameObject:
   - component: {fileID: 1367634389}
   - component: {fileID: 1367634390}
   - component: {fileID: 1367634391}
+  - component: {fileID: 1367634392}
+  - component: {fileID: 1367634393}
+  - component: {fileID: 1367634394}
+  - component: {fileID: 1367634395}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -1942,23 +1946,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fabf76886f4aaa740b25187b4d865ca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardPrefab: {fileID: -8485186379027662851, guid: 4664077484a8a4d43a3b5472a1f5f0c7, type: 3}
+  cardDefault: {fileID: -3655719561647765877, guid: 4664077484a8a4d43a3b5472a1f5f0c7, type: 3}
+  cardEnd: {fileID: -4414447257377657974, guid: 21ca1ac1221941e42b10b32b90fb1ff5, type: 3}
   spawnTransformCard: {fileID: 1307798719}
   textMassage: {fileID: 1092431597}
-  textMoney: {fileID: 1653502866}
-  textSup: {fileID: 711345652}
-  textManpower: {fileID: 1652339515}
-  textAmmo: {fileID: 1091897583}
-  textDays: {fileID: 1470867342}
-  textMonth: {fileID: 1460038564}
-  textYears: {fileID: 742338199}
-  Days: 0
-  Months: 0
-  Years: 0
-  Manpower: 0
-  Money: 0
-  Sup: 0
-  Ammo: 0
 --- !u!114 &1367634388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1972,6 +1963,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardList: []
+  cardListEnd: []
 --- !u!114 &1367634389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1985,6 +1977,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventList: []
+  eventEndList: []
 --- !u!114 &1367634390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2013,6 +2006,61 @@ MonoBehaviour:
   buttonStartGame: {fileID: 827172258}
   buttonExitGame: {fileID: 148878662}
   panelMenu: {fileID: 963145904}
+--- !u!114 &1367634392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367634384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb9a45c72206fe84fbe726f7f33b492a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textDays: {fileID: 1470867342}
+  textMonth: {fileID: 1460038564}
+  textYears: {fileID: 742338199}
+--- !u!114 &1367634393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367634384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e08adf3957110a4988ae0e82a1eb9a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMoney: {fileID: 1653502866}
+  textSup: {fileID: 711345652}
+  textManpower: {fileID: 1652339515}
+  textAmmo: {fileID: 1091897583}
+--- !u!114 &1367634394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367634384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 356ef3641d7288c40a6d8d4cb3223bb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1367634395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367634384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ad6eeb29dd437c4384363dbab60d7cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1460038562
 GameObject:
   m_ObjectHideFlags: 0
